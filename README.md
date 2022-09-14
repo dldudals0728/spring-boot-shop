@@ -1,5 +1,44 @@
 # spring boot shopping mall project
 언급되지 않은 모든 출처는 [ㅎULL.KR](https://hull.kr/) 입니다. 감사합니다 교수님!
+## Directory
+```
+├─main
+│  ├─java
+│  │  └─kr
+│  │      └─ac
+│  │          └─gachon
+│  │                 └─shop
+│  │                      ├─ShopApplication.java
+│  │                      │
+│  │                      ├─controller
+│  │                      │      ├─DefaultGetController.java
+│  │                      │      ├─DefaultPostController.java
+│  │                      │      └─DefaultReqController.java
+│  │                      │
+│  │                      └─dto
+│  │                          └─UserDto.java
+│  │
+│  └─resources
+│      ├─application.properties
+│      │
+│      ├─static
+│      │    └─post.html
+│      │
+│      └─templates
+│          ├─get
+│          │   └─index.html
+│          │
+│          └─post
+│              └─index.html
+│
+└─test
+    └─java
+        └─kr
+            └─ac
+                └─gachon
+                    └─shop
+                         └─ShopApplicationTests.java
+```
 ## 개발 환경 세팅
 ### Software
 <hr>
