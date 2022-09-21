@@ -8,6 +8,7 @@
 	</head>
 	<body>
 	<!-- msg값이 있으면(null이 아니면) 뒤의 안녕하세요는 무시한다. -->
+	<!-- if-unless: thymeleaf의 if-else 구문. 주의점은 if와 unless의 조건을 "같게" 적어줘야 제대로 동작함! -->
 	<h1 th:if="${msg != null}" th:text="'model 값 : '+${msg}">안녕하세요.</h1>
 	<h1 th:unless="${msg != null}" th:text="'model 값 없음'">안녕하세요.</h1>
 	<div th:if="${dto}">
