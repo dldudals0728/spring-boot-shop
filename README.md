@@ -146,3 +146,20 @@ modelObj.addAttribute(key, value)
 * Dto의 필드명과 html에서 submit하는 태그의 name속성의 값이 서로 같아야 한다 ⚠
 <hr>
 
+5주차
+### application-test.properties
+
+ItemRepositoryTest에서 사용한 application-test.properties이다.
+```properties
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+spring.datasource.url=jdbc:mariadb://localhost:3307/test?characterEncoding=UTF-8&serverTimezone=UTC
+#테스트 계정 새로 생성해서 부여
+spring.datasource.username=test
+spring.datasource.password=123456
+
+# DB 모드
+spring.jpa.hibernate.ddl-auto=create
+
+#MariaDB 방언(dialect) 설정
+spring.jpa.database-platform=org.hibernate.dialect.MariaDB103Dialect
+```
