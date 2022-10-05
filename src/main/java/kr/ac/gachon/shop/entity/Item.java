@@ -21,7 +21,7 @@ public class Item{
     private Long id;       //상품 코드
 
     @Column(nullable = false, length = 50)
-    private String itemNm; //상품명
+    private String itemNm; //상품명 ==> itemNm이 item_nm 으로 변경되서 들어감!
 
     @Column(name="price", nullable = false)
     private int price; //가격
@@ -29,11 +29,11 @@ public class Item{
     @Column(nullable = false)
     private int stockNumber; //재고수량
 
-    @Lob
+    @Lob    // 아주 긴 text를 사용할 수 있도록 해줌!
     @Column(nullable = false)
     private String itemDetail; //상품 상세 설명
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)    // db table에서는 string으로 들어감.
     private ItemSellStatus itemSellStatus; //상품 판매 상태
 
     private LocalDateTime regTime; // 동록 시간
