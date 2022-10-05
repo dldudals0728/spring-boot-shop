@@ -242,7 +242,12 @@ pom.xml에 해당 dependency와 plugin을 추가한다.
 
 위와 같이 설정해준다. 그러면 준비 끝 !
 
---- img ---
+![project-setting-1](https://user-images.githubusercontent.com/70733949/194039866-103cbf40-5d0f-4cd2-9e69-78121feed9e5.png)
+
+이거를
+
+![project-setting-2](https://user-images.githubusercontent.com/70733949/194040022-2660a950-30bc-4977-b6df-d59ed8e3b2c0.png)
+이렇게 바꿔주면 된다.
 
 ### BooleanBuilder & Pageable * HARD *
 게시판을 포면 페이지별로 몇 개의 게시물들을 보여주는데, 이걸 쉽게 구현하는 것이 Spring 에서 제공하는 Pageable 이다.
