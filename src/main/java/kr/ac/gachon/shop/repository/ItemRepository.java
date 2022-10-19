@@ -40,11 +40,11 @@ public interface ItemRepository extends JpaRepository<Item, Long>, QuerydslPredi
     // @Query() 어노테이션에 들어가는 변수는 :[variable name]으로, 앞에 콜론(:)을 붙여서 전달한다.
     // 변수 명은 @Param("[variable name]")으로 정의된다.
     @Query("select i from Item i  where i.itemDetail like " +
-    "%:itemDetail% order by i.price desc")
+            "%:itemDetail% order by i.price desc")
     List<Item> findByItemDetail(@Param("itemDetail") String itemDetail);
 
     // mariadb Query(nativeQuery = true) 속성으로 가능
-    @Query(value = "select * from item i where i.item_detail like" +
-    "%:itemDetail% order by i.price desc", nativeQuery = true)
+    @Query(value = "select * from item i where i.item_detail like " +
+            "%:itemDetail% order by i.price desc", nativeQuery = true)
     List<Item> findByItemDetailByNative(@Param("itemDetail") String itemDetail);
 }

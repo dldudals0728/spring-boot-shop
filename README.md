@@ -260,6 +260,68 @@ Pageable pageable = PageRequest.of(0, 5);
 위와 같은 경우는 페이지 0번부터 5개의 record를 가져온다!
 > indexing 처럼 0부터 시작한다. 0부터 !!
 
+## thymeleaf(Front-end)
+<hr>
+
+[thymeleaf 공식 홈페이지](http://www.thymeleaf.org)
+
+```html
+<html xmlns:th="http://www.thymeleaf.org">
+```
+html 태그에 다음과 같이 입력하여 thymeleaf 문법을 사용할 수 있다.
+
+### 기본개념
+> https://hull.kr/springboot/66?sca=%EC%9D%B4%EB%A1%A0 <hr>
+> View에 값을 전달할 때는 Model에 담아서 전달하게 된다!!
+
+### thymeleaf 사용 문법
+``` thymeleafexpressions
+* th:text="${data}"
+단순 값을 모델에 전달했을 때
+
+* th:text="${dto.dtoAttr}"
+모델에 Dto를 전달하고, 해당 Dto에 접근할 때
+
+* th:each="dto, status=${dtoList}"
+List<Dto> 형식을 모델로 받았을 때.
+dtoList의 각각이 dto로 들어가고, status를 이용하여 index, even 등에 접근할 수 있다.
+각각의 dto에 접근하려면 dto.dtoAttr로 접근할 수 있다.
+
+* th:if="${조건}"
+* th:unless="${조건}"
+thymeleaf의 조건문. thymeleaf에서 else = unless이고 unless에 들어가는 조건은 if에 들어가는 조건과 같아야한다.
+
+* th:switch="${조건}"
+*     th:case="true(false)"
+switch-case 문은 case문이 안으로 들어가도록 구현한다.
+
+* th:href="@{url 또는 controller mapping의 value}"
+thymeleaf의 링크는 텍스트와 달리 @{}로 접근한다.
+프로젝트 내부의 View를 보여주려면 View의 경로가 아닌 Controller의 Mapping value로 지정해준다!
+
+* th:href="@{/thymeleaf/ex06(param1 = 'param data1', param2 = 'param data2')
+위와 같이 파라미터를 전달할 수도 있다. 컨트롤러 함수에서 해당 파라미터를 매개변수로 받아 사용한다.
+
+* th:replace="fragments/header::content이름"
+layout을 이용하여 View를 만든 후 다른 View에서 사용할 수 있다.
+replace의 값은 resource/templates 내의 파일 경로 및 layout:fragment="content이름"의 값을 받는다.
+```
+
+# Tips
+<hr>
+
+### WEB을 header, footer, nav등으로 나눌 때의 장점
+검색엔진은 물론, 재사용이 가능하다.<br>
+[헐](hull.kr)을 보면 header에는 로고, 로그인 메뉴, 각각의 콘텐츠 메뉴를 놓고, footer에는 Copyright에 대해 작성해 놓았다.<br>
+모든 페이지에 같은 header와 footer가 사용되니까, 만들어놓고 재사용하면 개꿀이다.
+> <i>그럼 react같은 single page application은 사용 효율이 조금 떨어지나...?</i>
+<hr>
+
+### bootstrap
+[bootstrap](https://getbootstrap.com/)<br>
+bootstrap에 대해 몰랐다. 근데 good js, css를 제공하더라. bootstrap CDN을 이용해서 빠른 개발을 진행할 수 있을 것 같다!
+
+
 
 # ERROR report
 <hr>

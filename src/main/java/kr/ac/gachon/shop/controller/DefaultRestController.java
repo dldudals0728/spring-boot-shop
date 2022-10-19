@@ -36,6 +36,7 @@ public class DefaultRestController {
         return map;
     }
 
+    // 이런식으로 하면, 받을 값을 지정해놓지 않아도 됨!
     @GetMapping(value = "/param")
     public String getRequestParam2(@RequestParam Map<String, String> param) {
         StringBuilder sb = new StringBuilder();
