@@ -307,6 +307,51 @@ layout을 이용하여 View를 만든 후 다른 View에서 사용할 수 있다
 replace의 값은 resource/templates 내의 파일 경로 및 layout:fragment="content이름"의 값을 받는다.
 ```
 
+### spring-boot-starter-security
+
+```xml
+<!--security 의존성 추가-->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+<!--security 의존성 추가-->
+```
+pom.xml에 의존성을 추가하는 것 만으로도 권한 설정을 끝낼 수 있다.<br>
+원래는 세션이나 쿠키를 이용하여 권한을 제어하지만, spring-boot-starter-security를 이용하면 모든 페이지에 접근 제한을 걸 수 있다.
+
+먼저 모든 권한을 해제해 주고, 필요한 곳에 권한 접근을 허용하면 된다.
+
+기본 아이디는 user, 비밀번호는
+<img>
+다음과 같이 spring 터미널에서 주어진다.<br>
+로그아웃을 진행하고 싶다면
+```
+http://localhost:8080/logout
+```
+해당 url로 접속하면 로그아웃 페이지가 나온다.
+
+### Test 파일 새성 방법!
+Repository, 또는 Service를 테스트 하려면 ClassNameTest라는 파일이 test 폴더 내에 있어야 한다.<br>
+이를 쉽게 하려면 해당 Repository, 또는 Serveice의 className에 커서를 올린 후<br>
+<kbd>alt</kbd> + <kbd>Enter</kbd>를 하면 'Create Test'가 있다. Junit5로 자동으로 되어있기 때문에 바로 생성하여 Test를 진행할 수 있다.
+> Test 파일은<br>
+> @SpringBootTest<br>
+> @TestPropertySource(locations="classpath:application-test.properties")
+> annotation을 이용해 설정해주고 test를 진행한다!
+
+
+⊙ JUnit의 assert 메소드
+> 같지 않다면 exception
+
+assertEquals(A, B) : 객체 A와 B가 같은 값을 가지는지 확인한다.
+assertEquals(A, B, C) : 객체 A와 B가 같은 값을 가지는지 확인한다. C는 오차범위.
+assertArrayEquals(A, B) : 배열 A와 B가 일치하는지 확인한다.
+assertSame(A, B) : 객체 A와 B가 같은 객체인지 확인한다.
+assertTrue(A) : 조건 A가 참인지 확인한다.
+assertNull(A) : 객체A가 Null인지 확인한다.
+assertNotNull(A) : 객체 A가 Null이 아닌지 확인한다.
+
 # Tips
 <hr>
 
@@ -322,6 +367,14 @@ replace의 값은 resource/templates 내의 파일 경로 및 layout:fragment="c
 bootstrap에 대해 몰랐다. 근데 good js, css를 제공하더라. bootstrap CDN을 이용해서 빠른 개발을 진행할 수 있을 것 같다!
 
 
+### 배포 파일 ~~~.min.file: .min의 의미
+```html
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+```
+bootstrap의 css를 받는데 bootstrap.min.css 파일을 불러온다.<br>
+여기서 .min은, "css 파일에서, 엔터(줄바꿈)을 모두 제거한 css파일"이라는 의미이다.<br>
+실제로 해당 링크를 웹페이지에서 접속하면 줄바꿈이 모두 제거된 css파일을 볼 수 있다. .min을 제거하고 확인하면 보기 좋은 css파일을 볼 수 있다.
+> .min이 없는 파일은 보고 공부하라고 있는 것!
 
 # ERROR report
 <hr>
