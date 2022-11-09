@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Table(name = "member")
 @Getter
 // Entity에서 Setter는 없어야된다. set을 하면 DB field에 직접 update를 쳐버린다!!
+// 따라서 모든 인자값을 받는 생성자를 만들거나, builder 타입으로 제공해아 함!!
 @Setter
 @ToString
 // 원칙상 MemberEntity가 맞지만, 개발하다 보면 뒤에 prefix로 Entity 붙힌거 때문에 에러가 나는 상황이 발생할 수 있어서 안붙힘.

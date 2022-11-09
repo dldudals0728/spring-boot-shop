@@ -56,6 +56,8 @@
         <div style="text-align: center">
             <button type="submit" class="btn btn-primary" style="">Submit</button>
         </div>
+        <!-- spring security를 사용할 때 무. 조. 건 추가해줘야 하는 코드! 근데.. 이거 추가하니까 에러 내보내면서 화면이 안나옴! -->
+<!--        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
     </form>
 

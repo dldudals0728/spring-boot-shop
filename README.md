@@ -376,6 +376,31 @@ bootstrap의 css를 받는데 bootstrap.min.css 파일을 불러온다.<br>
 실제로 해당 링크를 웹페이지에서 접속하면 줄바꿈이 모두 제거된 css파일을 볼 수 있다. .min을 제거하고 확인하면 보기 좋은 css파일을 볼 수 있다.
 > .min이 없는 파일은 보고 공부하라고 있는 것!
 
+### spring security token
+spring security를 사용할 때 꼭 추가해줘야 하는 input이 있다.
+```html
+<form>
+    ...
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+</form>
+```
+input type=hidden에  token 값을 넣어주는 것이다. 중요하다!!! 꼭 넣어줘야 한다!!
+
+## 긴급 추가
+상단의 spring security token handling 코드를 넣으니 아래와 같은 오류가 생겨나면서 html 소스가 뿌려지지 않았다.
+```
+spring net::ERR_INCOMPLETE_CHUNKED_ENCODING 200
+```
+상단의 코드를 주석처리하니까 화면은 나오는데, 회원가입 시 exception 403 error가 발생했다. 주석처리를 안하면 view가 안뜨고,<br>
+주석처리를 하니까 view는 나오는데 회원가입이 안되는 문제가 있다.
+
+이런 미친 다른곳에 있던 똑같은 코드를 그대로 복사해서 문제가 되는 부분에 붙여넣기 했더니 된다 ㅋㅋ 진짜 미치겠네
+
+
+### session & cookie
+session: 한번 로그인 되면 해당 페이지에서 다른 곳으로 이동할 때 로그인 정보를 가지고 다니는 것
+cookie: 페이지를 벗어나도 로그인 정보를 가지고 있는 것
+
 # ERROR report
 <hr>
 
