@@ -149,6 +149,63 @@ modelObj.addAttribute(key, value)
 5주차
 ### application-test.properties
 
+> default application.properties
+```properties
+#서버 포트
+server.port=8080
+
+#MySQL 접속 정보
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.datasource.url=jdbc:mysql://localhost:3306/shop?serverTimezone=UTC
+#spring.datasource.username=shop
+#spring.datasource.password=123456
+
+#MariaDB 접속 정보
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+spring.datasource.url=jdbc:mariadb://localhost:3307/shop
+spring.datasource.username=shop
+spring.datasource.password=232323
+
+#SQL 쿼리 출력
+spring.jpa.properties.hibernate.show_sql=true
+
+#SQL 포맷 템플릿
+spring.jpa.properties.hibernate.format_sql=true
+
+#SQ 물음표(값) 매칭 파라미터 출력
+logging.level.org.hibernate.type.descriptor.sql=trace
+
+# DB 모드
+spring.jpa.hibernate.ddl-auto=create
+
+#MySQL 방언(dialect) 설정
+#spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+
+#MariaDB 방언(dialect) 설정
+spring.jpa.database-platform=org.hibernate.dialect.MariaDB103Dialect
+
+#Live Reload(spring-boot-devtools) 개발시 수정된 소스 자동 빌드 후 로드
+spring.devtools.livereload.enabled=true
+
+#Thymeleaf cache 클라이언트 캐시 설정
+#spring.thymeleaf.cache = false
+
+#파일 1개 MAX 사이즈
+#spring.servlet.multipart.maxFileSize=50MB
+
+#한번 요청 MAX 사이즈
+#spring.servlet.multipart.maxRequestSize=300MB
+
+#상품 아이템 이미지 경로
+#itemImgLocation=/Users/.../.../item
+
+#리소스 경로
+#uploadPath=file:///Users/.../.../
+
+# JPA 지연 쿼리 시 명령어 갯수
+#spring.jpa.properties.hibernate.default_batch_fetch_size=1000
+```
+
 데이터베이스를 사용할 때, 테스트 용으로 사용할 수 있다.<br>
 repository에서 className 위에서 <kbd>alt</kbd> + <kbd>Enter</kbd> 후 Create Test를 선택하면 된다.
 <br>
