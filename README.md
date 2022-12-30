@@ -87,8 +87,10 @@ IN Mariadb - my.ini
 
 ### spring initializr
 <hr>
-[spring initializr](https://start.spring.io)
+[spring initializr](https://start.spring.io)<br>
+
 spring initializr를 통해 spring boot를 사용하기 위한 셋업을 진행한다.<br>
+
 ![spring initializr-dark](https://user-images.githubusercontent.com/70733949/190141562-a4661503-3030-4685-9303-174e4c2b65ec.png)
 
 ### software issue
